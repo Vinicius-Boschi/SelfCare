@@ -1,11 +1,11 @@
 <template>
     <main class="main">
         <div class="main__banner">
-            <img src="../../public/img/offer.png" alt="banner">
+            <img src="https://user-images.githubusercontent.com/74377158/192579977-bc1af80b-8964-4e75-aefa-2c131d9a31f0.png" alt="banner">
         </div>
         <div class="main__text">
-            <h1 class="main__title">Promoção</h1>
-            <p class="main__qntProducts">9 produtos</p>
+            <h1 class="main__title">{{ title }}</h1>
+            <p class="main__qntProducts"></p>
         </div>
         <Products />
     </main>
@@ -18,6 +18,11 @@
         name: 'Main',
         components: {
             Products
+        },
+        data() {
+            return {
+                title: 'Promoção'
+            }
         }
     }
 </script>

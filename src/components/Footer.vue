@@ -2,34 +2,25 @@
     <footer class="footer">
         <div class="footer__list">
             <ul>
-                <li>
-                    <a class="footer__link" href="#">Contato</a>
-                </li>
-                <li>
-                    <a class="footer__link" href="#">Termos de Serviço</a>
-                </li>
-                <li>
-                    <a class="footer__link" href="#">Política de Privacidade</a>
-                </li>
-                <li>
-                    <a class="footer__link" href="#">Cancelamento, troca e reembolso</a>
+                <li v-for="link in links" :key="link.id">
+                    <a class="footer__link" :href="link.link">{{ link.name }}</a>
                 </li>
             </ul>
             <div class="footer__contact">
-                <label for="#" class="footer__label">Newsletter</label>
+                <label for="#" class="footer__label">{{ labelName }}</label>
                 <input class="footer__input" type="email" name="email" id="email" placeholder="Digite seu melhor email">
-                <button class="footer__button">Inscrever</button>
+                <button class="footer__button">{{ buttonName }}</button>
             </div>
         </div>
         <div class="footer__info">
             <div class="footer__media">
-                <img src="../../public/img/instagram.png" alt="instagram">
-                <img src="../../public/img/facebook.png" alt="facebook">
+                <img :src="instagram" alt="">
+                <img :src="facebook" alt="facebook">
             </div>
             <div class="footer__payment">
-                <img src="../../public/img/mastercard.png" alt="mastercard">
-                <img src="../../public/img/paypal.png" alt="paypal">
-                <img src="../../public/img/visa.png" alt="visa">
+                <img :src="mastercard" alt="mastercard">
+                <img :src="paypal" alt="paypal">
+                <img :src="visa" alt="visa">
             </div>
         </div>
     </footer>
@@ -37,7 +28,24 @@
 
 <script>
     export default {
-        name: 'Footer'
+        name: 'Footer',
+        data() {
+            return {
+                labelName: 'Newsletter',
+                buttonName: 'Inscrever',
+                instagram: 'https://user-images.githubusercontent.com/74377158/192580021-4f0d79cc-994d-493d-b091-530d73ee34f0.png',
+                facebook: 'https://user-images.githubusercontent.com/74377158/192580017-b548e25d-73fa-4ec0-b12b-a4b035790edf.png',
+                mastercard: 'https://user-images.githubusercontent.com/74377158/192579975-1b6c4432-a4da-4a0e-9b3a-b1812ba69a9a.png',
+                paypal: 'https://user-images.githubusercontent.com/74377158/192579978-2c5f0355-7409-405c-b107-2ff42ba44300.png',
+                visa: 'https://user-images.githubusercontent.com/74377158/192580009-85995951-d18c-485b-8a18-215d8ff5009f.png',
+                links: [
+                    {link: '#', name:'Contato'},
+                    {link: '#', name:'Termos de Serviço'},
+                    {link: '#', name:'Política de Privacidade'},
+                    {link: '#', name:'Cancelamento, troca e reembolso'}
+                ]
+            }
+        }
     }
 </script>
 
