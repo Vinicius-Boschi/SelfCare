@@ -32,12 +32,19 @@
             display: flex;
             justify-content: center;
             padding: 3rem;
+
+            img {
+                @include for-phone-only {
+                    width: 100%;
+                }
+            }
         }
 
         &__text {
             display: flex;
             justify-content: space-between;
             padding: 2rem;
+            border-bottom: 1px solid $gray-two;
         }
 
         &__title {

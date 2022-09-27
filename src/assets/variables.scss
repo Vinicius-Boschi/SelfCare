@@ -2,4 +2,9 @@ $green: #ADDE87;
 $green-two: #5CA720;
 $black: #161616;
 $gray: #A5A1A1;
+$gray-two: #A5A1A154;
 $white: #F9F9F9;
+
+@mixin for-phone-only {
+    @media (min-width: 375px) and (max-width: 540px) { @content; }
+}

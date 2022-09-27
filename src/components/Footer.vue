@@ -47,11 +47,16 @@
     .footer {
         background-color: $white;
         padding: 2rem;
+        border-top: 1px solid $gray-two;
 
         &__list {
             display: flex;
             justify-content: space-around;
             line-height: 2;
+
+            @include for-phone-only {
+                flex-direction: column;
+            }
         }
 
         &__link {
@@ -75,6 +80,31 @@
             background-color: $green-two;
             color: $white;
             padding: .8rem;
+            cursor: pointer;
+        }
+
+        &__info {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 2rem;
+            border-top: 1px solid $gray-two;
+            padding: 0.5rem;
+        }
+
+        &__media {
+            margin-left: -4rem;
+
+            @include for-phone-only {
+                margin: 0 auto;
+            }
+        }
+
+        &__media, &__payment {
+
+            img {
+                margin-right: 1rem;
+            }
         }
     }
 

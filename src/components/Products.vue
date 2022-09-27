@@ -39,6 +39,11 @@
             grid-template-columns: repeat(4, 1fr);
             justify-items: center;
             padding: 2rem;
+            gap: 2rem;
+
+            @include for-phone-only {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         &__products-img {

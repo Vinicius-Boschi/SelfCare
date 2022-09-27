@@ -26,9 +26,14 @@
 </script>
 
 <style lang="scss">
+    @import '../assets/variables.scss';
 
     .header {
         padding: 2rem;
+
+        @include for-phone-only {
+            padding: 1rem;
+        }
 
         &__content {
             display: flex;
